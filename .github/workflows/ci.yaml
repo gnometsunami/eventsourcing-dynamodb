@@ -48,9 +48,10 @@ jobs:
 
       - name: Create dynamodb table
         run: |
-          aws configure --aws_access_key_id=NONE --aws_secret_access_key=NONE
+          export AWS_ACCESS_KEY_ID=AKIAIOSFODNN7EXAMPLE
+          export AWS_SECRET_ACCESS_KEY=wJalrXUtnFEMI/K7MDENG/bPxRfiCYEXAMPLEKEY
+          export AWS_DEFAULT_REGION=us-east-1
           aws dynamodb create-table \
-              --region us-east-1 \
               --endpoint-url http://localhost:8000 \
               --table-name dynamo_events \
               --attribute-definitions \
