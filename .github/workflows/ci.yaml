@@ -50,6 +50,7 @@ jobs:
 
       - name: Create dynamodb table
         run: |
+          sleep 3 # Lazy
           aws dynamodb create-table \
               --endpoint-url http://localhost:8000 \
               --table-name dynamo_events \
